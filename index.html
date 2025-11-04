@@ -3,34 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Important Notice</title>
+  <title>Special Update</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:#111;color:#fff}
-    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;flex-direction:column}
-    .card{background:#0d0d0d;padding:18px;border-radius:12px;max-width:900px;width:100%}
-    h1{margin:0 0 8px}
-    p{margin:0 0 16px;color:#ccc}
-    .video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px}
-    .video iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
-    .fake-btn{display:inline-block;background:#ffcc00;color:#111;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    html,body {margin:0; height:100%; background:#000; display:flex; align-items:center; justify-content:center;}
+    iframe {width:100%; height:100%; border:0;}
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="card">
-      <h1>Monthly Update — Watch Now</h1>
-      <p>Loading the briefing for you — please wait...</p>
+  <!-- autoplay with muted ensures it plays instantly -->
+  <iframe 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=dQw4w9WgXcQ"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
 
-      <div class="video" id="player">
-        <!-- fallback link in case embed/autoplay fails -->
-        <iframe id="yt" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&autoplay=1"
-                allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-
-      <p style="margin-top:12px;color:#aaa">
-        If the video doesn't start, <a class="fake-btn" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">click here</a>
-      </p>
-    </div>
-  </div>
+  <script>
+    // optional: unmute after 1s (some browsers allow it once video has started)
+    setTimeout(() => {
+      const iframe = document.querySelector("iframe");
+      iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+    }, 1500);
+  </script>
 </body>
 </html>
