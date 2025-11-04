@@ -1,28 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Special Update</title>
-  <style>
-    html,body {margin:0; height:100%; background:#000; display:flex; align-items:center; justify-content:center;}
-    iframe {width:100%; height:100%; border:0;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
 </head>
 <body>
-  <!-- autoplay with muted ensures it plays instantly -->
-  <iframe 
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=dQw4w9WgXcQ"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-
-  <script>
-    // optional: unmute after 1s (some browsers allow it once video has started)
-    setTimeout(() => {
-      const iframe = document.querySelector("iframe");
-      iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-    }, 1500);
-  </script>
+    <video width="100%" height="auto" controls loop>
+        <source src="https://github.com/your-username/your-repo-name/raw/main/your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </body>
 </html>
